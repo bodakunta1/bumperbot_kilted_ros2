@@ -1,0 +1,37 @@
+# === ROS 2 Workspace Build Artifacts ===
+build/
+install/
+log/
+
+# === Python Bytecode ===
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# === CMake / Colcon Cache ===
+CMakeFiles/
+CMakeCache.txt
+*.cmake
+*.ninja
+*.ninja_deps
+*.ninja_log
+
+# === IDE / Editor Files ===
+.vscode/
+.idea/
+*.swp
+*.swo
+*.user
+*.DS_Store
+*.code-workspace
+
+# === Colcon & ROS Metadata ===
+.colcon/
+.testing/
+ament_cmake_core/package.cmake
+
+# === Miscellaneous ===
+*.egg-info/
+*.egg
+dist/
