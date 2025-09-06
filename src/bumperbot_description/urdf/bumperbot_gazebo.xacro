@@ -42,20 +42,17 @@
 
     <gazebo>
         <xacro:if value="$(arg is_ignition)">
-            <plugin filename="ign_ros2_control-system" name="ign_ros2_control::IgnitionROS2ControlPlugin">
-                <paramaters>
-
-                </paramaters>
+            <plugin filename="gz_ros2_control-system" name="gz_ros2_control::GazeboRos2ControlPlugin">
+                <parameters>$(find bumperbot_controller)/config/bumperbot_controllers.yaml</parameters>
             </plugin>
         </xacro:if>
 
         <xacro:unless value="$(arg is_ignition)">
-            <plugin filename="gz_ros2_control-system" name="gz_ros2_control::GazeboSimRos2ControlPlugin">
-                <paramaters>
-
-                </paramaters>
+            <plugin filename="libgz_ros2_control-system.so" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+                <parameters>$(find bumperbot_controller)/config/bumperbot_controllers.yaml</parameters>
             </plugin>
         </xacro:unless>
+        <plugin name="gazebo_ros_clock" filename="libgazebo_ros_clock.so"/>
     </gazebo>
 
 </robot>
